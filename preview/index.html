@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blackwell Studio | Design preview v1 (not live)</title>
+<meta name="description" content="Design preview of the Blackwell Studio homepage. Not live. Placeholder copy.">
+<meta name="robots" content="noindex, nofollow">
+<!--
+  BLACKWELL STUDIO, HOMEPAGE DESIGN PREVIEW v1
+  Creative Director, 14 Nov 2026 (HO-000016 / HO-000017). INTERNAL DESIGN PREVIEW ONLY.
+  - Not published. https://blackwellstudio.nl status per Agency Identity tab: NOG NIET LIVE (not yet live).
+  - Placeholder copy throughout; Sales Manager's copy follows. Hero lines follow the owner's copy direction in the Website Build tab.
+  - Contact: info@blackwellstudio.nl. Agency Identity status on 14 Nov 2026: ACTIEF, GETEST (alias, send/receive tested).
+    sales@blackwellstudio.nl: ACTIEF, EXTERN GETEST (for proposals). Re-read the tab before publication.
+  - Email-only business: no phone, WhatsApp or address. No KvK or VAT numbers (planned eenmanszaak, not registered).
+  - No logo exists; the wordmark below is a typographic CONCEPT. "Ideas with Impact." is a DRAFT slogan.
+  - Fonts: Cormorant Garamond, Inter, IBM Plex Mono via Google Fonts (all SIL Open Font License 1.1).
+  - Motion: CSS only. Original effects inspired by the general idea of the owner's references
+    (Casberry particles, OriginKit 3D Stagger Flip / Weight Hover). No third-party code copied.
+    LICENSING: TO BE CHECKED (Account Manager) before any production use of those libraries.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0B0B0C; --anthracite:#16171A; --graphite:#24262A; --line:#3A3D42;
+  --silver:#B9BDC3; --silver-soft:#8E939A; --silver-deep:#5F646B;
+  --ivory:#F4F1EA; --ivory-200:#E8E4DA; --ivory-300:#D9D4C8; --stone:#55534E; --focus:#F1E6C8;
+  --f-display:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --f-sans:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, monospace;
+  --s-1:4px; --s-2:8px; --s-3:12px; --s-4:16px; --s-5:24px; --s-6:32px; --s-7:48px; --s-8:64px; --s-9:96px; --s-10:128px; --s-11:160px;
+  --r-0:0; --r-1:2px; --r-2:4px; --r-pill:999px;
+  --e-editorial:cubic-bezier(.22,1,.36,1); --e-standard:cubic-bezier(.4,0,.2,1);
+  --d-fast:120ms; --d-base:200ms; --d-mid:320ms; --d-slow:600ms; --d-reveal:900ms;
+  --gutter:clamp(20px,4.2vw,64px); --maxw:1312px;
+  --t-display:clamp(3.25rem,9.2vw,8.5rem); --t-h2:clamp(2.25rem,4.6vw,4rem); --t-h3:clamp(1.5rem,2.2vw,2rem);
+  --t-lead:clamp(1.125rem,1.5vw,1.375rem); --t-body:1.0625rem; --t-small:.875rem; --t-label:.75rem;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--ivory);font:400 var(--t-body)/1.6 var(--f-sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:var(--r-1)}
+.on-ivory :focus-visible{outline-color:var(--ink)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter)}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
+.label{font:500 var(--t-label)/1.4 var(--f-mono);letter-spacing:.18em;text-transform:uppercase}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Skip link + preview banner */
+.skip{position:absolute;left:var(--s-4);top:-100px;z-index:100;background:var(--ivory);color:var(--ink);padding:var(--s-3) var(--s-4);font-weight:600;text-decoration:none;transition:top var(--d-base) var(--e-standard)}
+.skip:focus{top:var(--s-3)}
+.preview-banner{background:var(--ivory);color:var(--ink);text-align:center;padding:10px var(--gutter);font:500 .8125rem/1.4 var(--f-mono);letter-spacing:.08em}
+.preview-banner strong{font-weight:500;text-transform:uppercase;letter-spacing:.16em}
+
+/* Nav */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(11,11,12,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(185,189,195,.14)}
+.nav{display:flex;align-items:center;justify-content:space-between;min-height:76px;gap:var(--s-5)}
+.wordmark{display:inline-flex;flex-direction:column;align-items:center;text-decoration:none;line-height:1;padding:var(--s-1) 0}
+.wordmark .wm-main{font:500 1.5rem/1 var(--f-display);letter-spacing:.06em;color:var(--ivory)}
+.wordmark .wm-sub{font:500 .5625rem/1 var(--f-sans);letter-spacing:.62em;margin-top:6px;margin-right:-.62em;color:var(--silver)}
+.nav-list{display:flex;gap:var(--s-6);list-style:none;margin:0;padding:0}
+.nav-list a{font:400 .9375rem/1 var(--f-sans);letter-spacing:.02em;color:var(--silver);text-decoration:none;padding:var(--s-2) 0;position:relative;transition:color var(--d-base) var(--e-standard),font-variation-settings var(--d-mid) var(--e-editorial),font-weight var(--d-mid) var(--e-editorial)}
+/* Effect 2 (Weight Hover, original CSS): Inter variable weight shifts 400 -> 600 */
+.nav-list a:hover{color:var(--ivory);font-weight:600}
+.nav-list a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--silver);transform:scaleX(0);transform-origin:left;transition:transform var(--d-mid) var(--e-editorial)}
+.nav-list a:hover::after,.nav-list a:focus-visible::after{transform:scaleX(1)}
+.nav-list a:active{color:var(--focus)}
+.btn.nav-cta{display:none}
+.menu-toggle{display:none}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:var(--s-3);min-height:52px;padding:0 var(--s-6);font:500 .9375rem/1 var(--f-sans);letter-spacing:.04em;text-decoration:none;border:1px solid transparent;border-radius:var(--r-1);cursor:pointer;transition:background-color var(--d-base) var(--e-standard),color var(--d-base) var(--e-standard),border-color var(--d-base) var(--e-standard),transform var(--d-fast) var(--e-standard)}
+.btn .arrow{display:inline-block;transition:transform var(--d-mid) var(--e-editorial)}
+.btn:hover .arrow{transform:translateX(4px)}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--ivory);color:var(--ink)}
+.btn-primary:hover{background:var(--silver)}
+.btn-primary:active{background:var(--ivory-300)}
+.btn-ghost{border-color:rgba(185,189,195,.5);color:var(--ivory)}
+.btn-ghost:hover{border-color:var(--ivory);background:rgba(244,241,234,.06)}
+.btn-ghost:active{background:rgba(244,241,234,.12)}
+.on-ivory .btn-primary{background:var(--ink);color:var(--ivory)}
+.on-ivory .btn-primary:hover{background:var(--graphite)}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;isolation:isolate;min-height:min(92vh,880px);display:flex;align-items:flex-end;padding:var(--s-11) 0 var(--s-9)}
+.hero-field{position:absolute;inset:0;z-index:-1;pointer-events:none}
+/* Calm silver particle field, CSS only (poster = the same layers, static) */
+.hero-field .dust{position:absolute;inset:-20%;background-repeat:repeat;opacity:.55}
+.hero-field .d1{background-image:radial-gradient(1px 1px at 20px 30px,rgba(217,220,224,.9) 50%,transparent 51%),radial-gradient(1px 1px at 140px 90px,rgba(185,189,195,.7) 50%,transparent 51%),radial-gradient(1.5px 1.5px at 90px 160px,rgba(244,241,234,.8) 50%,transparent 51%);background-size:200px 200px;animation:drift 90s linear infinite}
+.hero-field .d2{background-image:radial-gradient(1px 1px at 60px 40px,rgba(185,189,195,.55) 50%,transparent 51%),radial-gradient(1px 1px at 230px 180px,rgba(217,220,224,.5) 50%,transparent 51%);background-size:310px 310px;opacity:.4;animation:drift 140s linear infinite reverse}
+.hero-field .orbit{position:absolute;right:-12%;top:8%;width:min(78vw,980px);aspect-ratio:1;border-radius:50%;
+  background:conic-gradient(from 0deg,transparent 0 62%,rgba(185,189,195,.20) 72%,rgba(244,241,234,.38) 76%,transparent 82% 100%);
+  -webkit-mask:radial-gradient(closest-side,transparent 70%,#000 71%,#000 72%,transparent 73%,transparent 82%,#000 83%,#000 83.6%,transparent 84.2%);
+          mask:radial-gradient(closest-side,transparent 70%,#000 71%,#000 72%,transparent 73%,transparent 82%,#000 83%,#000 83.6%,transparent 84.2%);
+  animation:orbit 60s linear infinite;opacity:.9}
+.hero-field .glow{position:absolute;right:4%;top:18%;width:min(56vw,720px);aspect-ratio:1;border-radius:50%;background:radial-gradient(closest-side,rgba(185,189,195,.10),transparent 70%)}
+.hero-field::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--ink) 0%,rgba(11,11,12,.75) 38%,rgba(11,11,12,0) 70%),linear-gradient(0deg,var(--ink) 0%,rgba(11,11,12,0) 30%)}
+@keyframes drift{to{transform:translate3d(-200px,-120px,0)}}
+@keyframes orbit{to{transform:rotate(360deg)}}
+.hero .eyebrow{grid-column:1 / span 6;color:var(--silver);display:flex;align-items:center;gap:var(--s-4);margin:0 0 var(--s-6)}
+.hero .eyebrow::before{content:"";width:48px;height:1px;background:var(--silver)}
+.hero h1{grid-column:1 / span 10;margin:0;font:400 var(--t-display)/.92 var(--f-display);letter-spacing:-.02em}
+.hero h1 em{font-style:italic;color:var(--silver)}
+/* Effect 1 (3D Stagger Flip, original CSS): words flip up once on load */
+.hero h1 .w{display:inline-block;perspective:800px}
+.hero h1 .w > span{display:inline-block;transform-origin:50% 100%;animation:flipIn var(--d-reveal) var(--e-editorial) both}
+.hero h1 .w:nth-child(2) > span{animation-delay:90ms}.hero h1 .w:nth-child(3) > span{animation-delay:180ms}.hero h1 .w:nth-child(4) > span{animation-delay:270ms}
+@keyframes flipIn{from{opacity:0;transform:rotateX(-80deg) translateY(.18em)}to{opacity:1;transform:none}}
+.hero-aside{grid-column:8 / span 5;margin-top:var(--s-8)}
+.hero-aside p{margin:0 0 var(--s-6);font-size:var(--t-lead);line-height:1.5;color:var(--ivory-200);max-width:34ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:var(--s-3)}
+.hero .meta{grid-column:1 / span 5;align-self:end;margin-top:var(--s-8);color:var(--silver-soft)}
+
+/* Sections */
+section{scroll-margin-top:90px}
+.section{padding:var(--s-10) 0}
+.section-head{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;margin-bottom:var(--s-8)}
+.section-head .label{grid-column:1 / span 3;color:var(--silver);padding-top:.9em}
+.section-head h2{grid-column:4 / span 8;margin:0;font:400 var(--t-h2)/1.02 var(--f-display);letter-spacing:-.01em}
+.on-ivory{background:var(--ivory);color:var(--ink)}
+.on-ivory .section-head .label{color:var(--silver-deep)}
+.anthracite{background:var(--anthracite)}
+.placeholder-note{font:400 var(--t-small)/1.5 var(--f-mono);color:var(--silver-soft)}
+.on-ivory .placeholder-note{color:var(--stone)}
+
+/* Why */
+.why-list{grid-column:4 / span 9;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-6)}
+.why-list li{border-top:1px solid var(--ink);padding-top:var(--s-5)}
+.why-list .num{font:500 var(--t-label)/1 var(--f-mono);letter-spacing:.18em;color:var(--silver-deep)}
+.why-list h3{font:500 var(--t-h3)/1.15 var(--f-display);margin:var(--s-4) 0 var(--s-3)}
+.why-list p{margin:0;color:var(--stone)}
+
+/* Work: SPEC CONCEPT cards, typographic placeholders only */
+.work-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}
+.card{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:420px;padding:var(--s-6);background:var(--graphite);border:1px solid rgba(185,189,195,.16);border-radius:var(--r-2);text-decoration:none;overflow:hidden;transition:border-color var(--d-mid) var(--e-editorial),transform var(--d-mid) var(--e-editorial),background-color var(--d-mid) var(--e-editorial)}
+.card:nth-child(1){grid-column:1 / span 7;min-height:520px}
+.card:nth-child(2){grid-column:8 / span 5;margin-top:var(--s-9)}
+.card:nth-child(3){grid-column:3 / span 6}
+.card:hover{border-color:rgba(244,241,234,.55);transform:translateY(-4px)}
+.card:active{transform:translateY(-1px)}
+.card .tag{align-self:flex-start;border:1px solid var(--silver);color:var(--silver);padding:6px 10px}
+.card .ph{font:italic 400 clamp(2.5rem,6vw,5.5rem)/.9 var(--f-display);color:var(--ivory);opacity:.9}
+.card .ph small{display:block;font:500 var(--t-label)/1.4 var(--f-mono);letter-spacing:.18em;text-transform:uppercase;color:var(--silver-soft);margin-top:var(--s-4);font-style:normal}
+.card .lines{position:absolute;right:-40px;top:-40px;width:260px;height:260px;border-radius:50%;border:1px solid rgba(185,189,195,.18);box-shadow:0 0 0 28px rgba(185,189,195,.04),0 0 0 29px rgba(185,189,195,.12)}
+.rights-note{grid-column:9 / span 4;align-self:end;margin:0;color:var(--silver-soft)}
+
+/* Offer */
+.offer{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:start}
+.offer-price{grid-column:1 / span 5;font:400 clamp(4rem,10vw,9rem)/.9 var(--f-display);letter-spacing:-.03em;margin:0}
+.offer-price span{display:block;font:500 var(--t-label)/1.5 var(--f-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--silver-deep);margin-top:var(--s-4)}
+.offer-body{grid-column:7 / span 6}
+.offer-body h3{font:500 var(--t-h3)/1.2 var(--f-display);margin:0 0 var(--s-5)}
+.check{list-style:none;margin:0 0 var(--s-6);padding:0}
+.check li{padding:var(--s-3) 0;border-bottom:1px solid var(--ivory-300);display:flex;gap:var(--s-4)}
+.check li::before{content:"—";color:var(--silver-deep)}
+.not-incl{color:var(--stone);font-size:var(--t-small);margin:0 0 var(--s-6)}
+
+/* Process */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;counter-reset:s}
+.steps li{counter-increment:s;padding:var(--s-6) var(--s-5) var(--s-6) 0;border-top:1px solid rgba(185,189,195,.3)}
+.steps li::before{content:"0" counter(s);display:block;font:500 var(--t-label)/1 var(--f-mono);letter-spacing:.18em;color:var(--silver);margin-bottom:var(--s-5)}
+.steps h3{font:500 1.5rem/1.15 var(--f-display);margin:0 0 var(--s-2)}
+.steps p{margin:0;color:var(--silver-soft);font-size:.9375rem}
+
+/* Contact */
+.contact{padding:var(--s-11) 0}
+.contact h2{grid-column:1 / span 9;margin:0 0 var(--s-7);font:400 clamp(2.75rem,7vw,6.5rem)/.95 var(--f-display);letter-spacing:-.02em}
+.contact h2 em{color:var(--silver);font-style:italic}
+.contact .mail{grid-column:1 / span 7}
+.mail-link{display:inline-block;font:400 clamp(1.375rem,3vw,2.5rem)/1.2 var(--f-display);color:var(--ivory);text-decoration:none;border-bottom:1px solid var(--silver-deep);padding-bottom:var(--s-2);transition:border-color var(--d-base) var(--e-standard),color var(--d-base) var(--e-standard);word-break:break-word}
+.mail-link:hover{border-color:var(--ivory)}
+.mail-link:active{color:var(--silver)}
+.contact .alt{grid-column:9 / span 4;align-self:end;color:var(--silver-soft);margin:0}
+.contact .alt a{color:var(--silver)}
+.contact .alt a:hover{color:var(--ivory)}
+
+/* Footer */
+.site-footer{border-top:1px solid rgba(185,189,195,.16);padding:var(--s-8) 0 var(--s-7);color:var(--silver-soft);font-size:var(--t-small)}
+.footer-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:var(--s-6);align-items:end}
+.footer-grid .wordmark{grid-column:1 / span 4;align-items:flex-start}
+.footer-grid .wordmark .wm-main{font-size:2rem}
+.slogan{grid-column:5 / span 4;margin:0;color:var(--silver)}
+.slogan .draft{margin-left:var(--s-2);border:1px solid var(--silver-deep);padding:2px 6px;font:500 .625rem/1 var(--f-mono);letter-spacing:.14em;color:var(--silver-soft);vertical-align:middle}
+.footer-grid > nav{grid-column:9 / span 4}
+.footer-nav{display:flex;gap:var(--s-5);justify-content:flex-end;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+.footer-nav a{text-decoration:none;color:var(--silver)}
+.footer-nav a:hover{color:var(--ivory);text-decoration:underline;text-underline-offset:4px}
+.legal{grid-column:1 / -1;display:flex;justify-content:space-between;gap:var(--s-5);flex-wrap:wrap;border-top:1px solid rgba(185,189,195,.1);padding-top:var(--s-5)}
+
+/* ---------- Tablet 768 ---------- */
+@media (max-width:1024px){
+  .nav-list{gap:var(--s-5)}
+  .hero h1{grid-column:1 / -1}
+  .hero-aside{grid-column:5 / -1}
+  .hero .meta{display:none}
+  .section-head .label{grid-column:1 / -1;padding:0;margin-bottom:var(--s-4)}
+  .section-head h2{grid-column:1 / span 11}
+  .why-list{grid-column:1 / -1}
+  .card:nth-child(1){grid-column:1 / -1;min-height:440px}
+  .card:nth-child(2){grid-column:1 / span 6;margin-top:0}
+  .card:nth-child(3){grid-column:7 / span 6}
+  .rights-note{grid-column:1 / -1;margin-top:var(--s-4)}
+  .offer-price{grid-column:1 / -1;margin-bottom:var(--s-7)}
+  .offer-body{grid-column:3 / -1}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--s-6)}
+  .steps li:last-child{grid-column:1 / -1}
+  .contact h2{grid-column:1 / -1}
+  .contact .mail{grid-column:1 / -1}
+  .contact .alt{grid-column:1 / -1;margin-top:var(--s-6)}
+  .footer-grid .wordmark{grid-column:1 / span 6}
+  .slogan{grid-column:7 / span 6;text-align:right}
+  .footer-grid > nav{grid-column:1 / -1}
+  .footer-nav{justify-content:flex-start}
+}
+@media (max-width:860px){
+  .nav-list{display:none}
+  .btn.nav-cta{display:inline-flex;min-height:44px;padding:0 var(--s-5)}
+}
+/* ---------- Mobile 390 ---------- */
+@media (max-width:600px){
+  :root{--t-body:1rem}
+  .grid,.section-head,.work-grid,.offer,.footer-grid{grid-template-columns:minmax(0,1fr);column-gap:0}
+  .grid > *,.section-head > *,.work-grid > *,.offer > *,.footer-grid > *{grid-column:1 / -1 !important}
+  .nav{min-height:64px}
+  .wordmark .wm-main{font-size:1.25rem}
+  .nav-cta{font-size:.8125rem;padding:0 var(--s-4)}
+  .hero{min-height:auto;padding:var(--s-9) 0 var(--s-8)}
+  .hero-field .orbit{right:-55%;top:4%;width:140vw}
+  .hero-field::after{background:linear-gradient(0deg,var(--ink) 10%,rgba(11,11,12,.55) 60%,rgba(11,11,12,.2) 100%)}
+  .hero h1{font-size:clamp(3rem,15vw,4.25rem)}
+  .hero-aside{margin-top:var(--s-6)}
+  .cta-row .btn{width:100%;justify-content:space-between}
+  .section{padding:var(--s-9) 0}
+  .why-list{grid-template-columns:minmax(0,1fr);gap:var(--s-6)}
+  .card,.card:nth-child(1){min-height:340px;margin-top:0}
+  .steps{grid-template-columns:minmax(0,1fr)}
+  .steps li{padding:var(--s-5) 0}
+  .contact{padding:var(--s-9) 0}
+  .slogan{text-align:left}
+  .legal{flex-direction:column}
+}
+/* Reduced motion: everything static; particle field becomes its own poster */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important;transition-duration:1ms !important;scroll-behavior:auto !important}
+  .hero h1 .w > span{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="preview-banner" role="note"><strong>Design preview, not live.</strong> Placeholder copy.</div>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <!-- Wordmark: typographic CONCEPT (Direction A, Editorial Serif). Not an approved logo. -->
+    <a class="wordmark" href="#top" aria-label="Blackwell Studio, home">
+      <span class="wm-main" aria-hidden="true">BLACKWELL</span><span class="wm-sub" aria-hidden="true">STUDIO</span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-list">
+        <li><a href="#why">Why Blackwell</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#offer">Offer</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-ghost nav-cta" href="#contact">Contact</a>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="hero-field" aria-hidden="true"><div class="glow"></div><div class="dust d1"></div><div class="dust d2"></div><div class="orbit"></div></div>
+    <div class="wrap grid">
+      <p class="eyebrow label">Ready when you are</p>
+      <h1 id="hero-title"><span class="w"><span>Your</span></span> <span class="w"><span>brand</span></span> <span class="w"><span><em>comes</em></span></span> <span class="w"><span><em>first.</em></span></span></h1>
+      <div class="hero-aside">
+        <p>Distinctive advertising concepts, built around what makes your brand worth noticing.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="mailto:info@blackwellstudio.nl?subject=Blackwell%20Studio%20enquiry">Put your brand in focus <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" href="#offer">See the offer</a>
+        </div>
+      </div>
+      <p class="meta label">Advertising concepts · Creative direction · Ad copy</p>
+    </div>
+  </section>
+
+  <section class="section on-ivory" id="why" aria-labelledby="why-title">
+    <div class="wrap">
+      <div class="section-head"><p class="label">01 · Why Blackwell</p><h2 id="why-title">Considered creative direction, from the first line to the last.</h2></div>
+      <div class="grid">
+        <ul class="why-list">
+          <li><span class="num">A</span><h3>One clear idea</h3><p>Placeholder: every concept is built around a single, specific reason to choose your brand.</p></li>
+          <li><span class="num">B</span><h3>Claims you can stand behind</h3><p>Placeholder: we work from what your brand can prove, never from invented promises.</p></li>
+          <li><span class="num">C</span><h3>Made for the format</h3><p>Placeholder: concepts are composed for the placement they will actually run in.</p></li>
+        </ul>
+      </div>
+      <p class="placeholder-note" style="margin-top:48px">Placeholder copy. Final copy by Sales Manager.</p>
+    </div>
+  </section>
+
+  <section class="section" id="work" aria-labelledby="work-title">
+    <div class="wrap">
+      <div class="section-head"><p class="label">02 · Work</p><h2 id="work-title">Selected concepts.</h2></div>
+      <!-- SPEC CONCEPT placeholders only. No client names, logos or sample images until a rights review and owner approval. -->
+      <div class="work-grid">
+        <article class="card" aria-label="Spec concept 01, placeholder"><span class="lines" aria-hidden="true"></span><span class="tag label">Spec concept</span><p class="ph">Concept 01<small>Placeholder · category to follow</small></p></article>
+        <article class="card" aria-label="Spec concept 02, placeholder"><span class="lines" aria-hidden="true"></span><span class="tag label">Spec concept</span><p class="ph">Concept 02<small>Placeholder · category to follow</small></p></article>
+        <article class="card" aria-label="Spec concept 03, placeholder"><span class="lines" aria-hidden="true"></span><span class="tag label">Spec concept</span><p class="ph">Concept 03<small>Placeholder · category to follow</small></p></article>
+        <p class="rights-note placeholder-note">Spec concepts are unofficial and uncommissioned. Nothing is published here without a rights review.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-ivory" id="offer" aria-labelledby="offer-title">
+    <div class="wrap">
+      <div class="section-head"><p class="label">03 · Offer</p><h2 id="offer-title">Three concepts. One focused starting point.</h2></div>
+      <!-- Price and scope from Agency Identity 'Startpakket' / 'Richtprijs' (WERKAANBOD). Owner approves prices and scope before publication. -->
+      <div class="offer">
+        <p class="offer-price">€399<span>Excluding applicable VAT</span></p>
+        <div class="offer-body">
+          <h3>Starter package</h3>
+          <ul class="check">
+            <li>Three strategically distinct static ad concepts</li>
+            <li>Headline, copy and call to action for each</li>
+            <li>One bundled round of revisions</li>
+          </ul>
+          <p class="not-incl">Not included: ad spend, campaign management or guaranteed results.</p>
+          <a class="btn btn-primary" href="mailto:sales@blackwellstudio.nl?subject=Starter%20package">Request a proposal <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section anthracite" id="process" aria-labelledby="process-title">
+    <div class="wrap">
+      <div class="section-head"><p class="label">04 · Process</p><h2 id="process-title">A short, clear path from brief to delivery.</h2></div>
+      <ol class="steps">
+        <li><h3>Intake</h3><p>Placeholder: your brand, audience and goal.</p></li>
+        <li><h3>Strategy</h3><p>Placeholder: one angle worth making.</p></li>
+        <li><h3>Three concepts</h3><p>Placeholder: distinct directions, written and composed.</p></li>
+        <li><h3>One review</h3><p>Placeholder: a single bundled round of feedback.</p></li>
+        <li><h3>Delivery</h3><p>Placeholder: final files in the formats you need.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap grid">
+      <h2 id="contact-title">Ready when <em>you are.</em></h2>
+      <div class="mail">
+        <p class="label" style="color:var(--silver);margin:0 0 16px">Email</p>
+        <!-- info@blackwellstudio.nl: Agency Identity status 14 Nov 2026 = ACTIEF, GETEST. Re-check the tab before publication. -->
+        <a class="mail-link" href="mailto:info@blackwellstudio.nl">info@blackwellstudio.nl</a>
+      </div>
+      <p class="alt">For proposals: <a href="mailto:sales@blackwellstudio.nl">sales@blackwellstudio.nl</a><br>We work by email only.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <a class="wordmark" href="#top" aria-label="Blackwell Studio, back to top"><span class="wm-main" aria-hidden="true">BLACKWELL</span><span class="wm-sub" aria-hidden="true">STUDIO</span></a>
+    <p class="slogan">Ideas with Impact. <span class="draft">DRAFT SLOGAN</span></p>
+    <nav aria-label="Footer"><ul class="footer-nav"><li><a href="#work">Work</a></li><li><a href="#offer">Offer</a></li><li><a href="#contact">Contact</a></li><li><a href="#top">Privacy (to follow)</a></li></ul></nav>
+    <!-- Legal/company details: placeholder until Account Manager review. No KvK or VAT numbers (business not yet registered). No address or phone. -->
+    <div class="legal"><span>© 2026 Blackwell Studio</span><span>Design preview v1 · not live · placeholder copy</span></div>
+  </div>
+</footer>
+</body>
+</html>
