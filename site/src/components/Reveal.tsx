@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ReactNode } from 'react'
+import { useLayoutEffect, useRef, useState, type ReactNode } from 'react'
 
 interface RevealProps {
   children: ReactNode
@@ -9,10 +9,13 @@ export function Reveal({ children, className }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null)
   const [shown, setShown] = useState(false)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const el = ref.current
     if (!el) return
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const rect = el.getBoundingClientRect()
+    const inView = rect.top < window.innerHeight * 0.92 && rect.bottom > 0
+    if (reduce || inView) {
       setShown(true)
       return
     }

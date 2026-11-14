@@ -41,7 +41,13 @@ for (const brand of brands) {
 const faviconSvg = await readFile(path.join(handoff, 'brand/favicon-B.svg'))
 for (const size of [32, 180]) {
   const name = size === 32 ? 'favicon-32.png' : 'apple-touch-180.png'
-  const png = new Resvg(faviconSvg, { fitTo: { mode: 'width', value: size } }).render().asPng()
+  const rendered = new Resvg(faviconSvg, { fitTo: { mode: 'width', value: size } }).render().asPng()
+  const png = await sharp({
+    create: { width: size, height: size, channels: 4, background: '#0B0B0C' },
+  })
+    .composite([{ input: rendered }])
+    .png()
+    .toBuffer()
   await writeFile(path.join(publicDir, name), png)
   console.log(name, png.length)
 }

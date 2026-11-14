@@ -7,10 +7,8 @@ function srcSet(id: string, ratio: '4x5' | '16x10', widths: readonly number[], e
 }
 
 function WorkFigure({ concept }: { concept: WorkConcept }) {
-  const portraitSizes = concept.featured
-    ? '(min-width: 1100px) 420px, (min-width: 768px) 46vw, calc(100vw - 40px)'
-    : '(min-width: 1100px) 460px, (min-width: 768px) 46vw, calc(100vw - 40px)'
-  const wideSizes = '(min-width: 1100px) 740px, calc(100vw - 48px)'
+  const portraitSizes = '(min-width: 1100px) 300px, (min-width: 768px) 46vw, calc(100vw - 40px)'
+  const wideSizes = '(min-width: 1100px) 640px, calc(100vw - 48px)'
   const fallback = `${import.meta.env.BASE_URL}work/${concept.id}-4x5-720.webp`
 
   return (
@@ -34,7 +32,7 @@ function WorkFigure({ concept }: { concept: WorkConcept }) {
         ) : null}
         <source type="image/avif" srcSet={srcSet(concept.id, '4x5', WORK_WIDTHS.portrait, 'avif')} sizes={portraitSizes} />
         <source type="image/webp" srcSet={srcSet(concept.id, '4x5', WORK_WIDTHS.portrait, 'webp')} sizes={portraitSizes} />
-        <img src={fallback} alt={concept.alt} width={1080} height={1350} loading="lazy" decoding="async" />
+        <img src={fallback} alt={concept.alt} width={1080} height={1350} loading="eager" decoding="async" />
       </picture>
     </div>
   )

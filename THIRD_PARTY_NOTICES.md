@@ -27,6 +27,6 @@ Notices travel with the files in `site/src/fonts/licenses/` and are copied to `s
 | sharp | Apache-2.0 |
 | @resvg/resvg-js | MPL-2.0 |
 
-MIT packages are used under the MIT licence included with each package. Apache-2.0 packages are used under the Apache Licence 2.0. `@resvg/resvg-js` is used under the Mozilla Public Licence 2.0 and is a build tool only.
+The production build copies the MIT copyright and permission notices for react, react-dom, tailwindcss, @tailwindcss/vite, and daisyui to `site/dist/licenses/THIRD-PARTY-NOTICES.txt` (source: `site/public/licenses/THIRD-PARTY-NOTICES.txt`). Apache-2.0 packages are used under the Apache Licence 2.0. `@resvg/resvg-js` is used under the Mozilla Public Licence 2.0 and is a build tool only.
 
 The hero particle field and the hover motion are original to this repository. No code was copied from particles.casberry.in or originkit.dev.

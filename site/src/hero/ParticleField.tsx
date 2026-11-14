@@ -13,6 +13,7 @@ function lowPower() {
 }
 
 function desiredMode() {
+  if (typeof window === 'undefined') return 'poster' as const
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return 'poster' as const
   if (window.matchMedia('(max-width: 700px)').matches) return 'poster' as const
   if (lowPower()) return 'poster' as const
@@ -65,7 +66,7 @@ function FieldCanvas() {
 
   useLayoutEffect(() => {
     if (!node) return
-    const handle = mountHeroField(node, mode)
+    const handle = mountHeroField(node, mode, () => setVisual('fallback'))
     setVisual(handle.mode)
     return () => handle.destroy()
   }, [node, mode])

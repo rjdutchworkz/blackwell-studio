@@ -13,7 +13,7 @@ export function Process() {
             </h2>
             <p className="quiet">{process.intro}</p>
           </div>
-          <ol className="steps">
+          <ol className="process-steps">
             {process.steps.map((step, index) => (
               <li key={step.title}>
                 <span className="step-no label">{String(index + 1).padStart(2, '0')}</span>

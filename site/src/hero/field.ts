@@ -108,10 +108,11 @@ function buildField(cssW: number, cssH: number): Field {
     oy = cssH * 0.05
   }
   if (cssW < 700) {
-    boxH = cssH * 0.32
+    const headerH = Number.parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 64
+    boxH = Math.min(cssH * 0.3, Math.max(120, cssH - headerH - 240))
     boxW = Math.min(boxH * 0.8, cssW * 0.58)
     ox = (cssW - boxW) / 2
-    oy = cssH * 0.015
+    oy = headerH + 16
   }
 
   const field: Field = {
@@ -231,8 +232,13 @@ function compile(gl: WebGLRenderingContext, type: number, source: string) {
   return shader
 }
 
-export function mountHeroField(canvas: HTMLCanvasElement, mode: 'live' | 'poster'): { mode: HeroVisual; destroy: () => void } {
+export function mountHeroField(
+  canvas: HTMLCanvasElement,
+  mode: 'live' | 'poster',
+  onLost?: () => void,
+): { mode: HeroVisual; destroy: () => void } {
   let running = true
+  let disposed = false
   let raf = 0
   let visible = !document.hidden
   let onscreen = true
@@ -471,6 +477,9 @@ export function mountHeroField(canvas: HTMLCanvasElement, mode: 'live' | 'poster
     canvas.addEventListener('webglcontextlost', (event) => {
       event.preventDefault()
       running = false
+      if (raf) cancelAnimationFrame(raf)
+      raf = 0
+      if (!disposed) onLost?.()
     })
     kick()
   }
@@ -478,6 +487,7 @@ export function mountHeroField(canvas: HTMLCanvasElement, mode: 'live' | 'poster
   return {
     mode: visual,
     destroy() {
+      disposed = true
       running = false
       if (raf) cancelAnimationFrame(raf)
       observer.disconnect()
