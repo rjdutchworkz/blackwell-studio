@@ -1,0 +1,4 @@
+# Design preview. The HTML also sends noindex, nofollow.
+# Replace this file when publication is approved.
+User-agent: *
+Disallow: /
